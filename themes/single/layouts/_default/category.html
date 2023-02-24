@@ -1,0 +1,8 @@
+{{ define "main" }}
+{{ $cat := . }}
+{{ $paginator := (.Paginate (where .RegularPages "Type" "links") 10) }}
+
+<div class="mb-10">
+  {{ partial "links" (dict "Site" .Site "Params" .Params "Pages" ($paginator.Pages.ByDate.Reverse)) }}
+</div>
+{{ end }}

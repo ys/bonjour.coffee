@@ -1,0 +1,30 @@
+  {{ $images := .Resources.ByType "image" }}
+  {{ $src := $images.GetMatch "*cover*" }}
+  {{ $src := $images.GetMatch "*feature*" }}
+  {{ $src := cond (ne $src nil) $src ($images.GetMatch "{*cover*,*thumbnail*}") }}
+  {{ $src := cond (ne $src nil) $src (index $images 0) }}
+
+  <article class="flex flex-col">
+    <a href="{{ .RelPermalink }}">
+      {{ if $src }}
+        {{ $lqipw := default "30x20" }}
+        {{ $largew := default "600x400" }}
+
+        {{/* resize the src image to the given sizes */}}
+
+        {{ $lqip := $src.Fill $lqipw }}
+        {{ $large := $src.Fill $largew }}
+
+        <picture
+          class="block relative aspect-w-3 aspect-h-2 rounded-sm shadow-lg"
+          style="background: url(data:image/jpeg;base64,{{ $lqip.Content | base64Encode  }}); background-size: cover">
+          <img loading="lazy" class="m-0 h-auto rounded-sm w-full lazyload" alt="cover {{ .Title}}" data-action="zoom"
+            data-zoom-src="{{ $large.RelPermalink}}"
+             src="{{ $large.RelPermalink }}" width="{{ $large.Width }}" height="{{ $large.Height }}">
+        </picture>
+      {{ else }}
+        <div class="flex items-center justify-center aspect-w-3 aspect-h-2 rounded-sm shadow-lg {{ with .Params.Color }}bg-{{ . }}-300 {{ else }}bg-accent-300{{ end }}"><div class="text-6xl w-8 h-8 block m-auto opacity-60">{{.Params.emoji}}</div></div>
+      {{ end }}
+      <h2 class="m-1 font-sans font-sans tracking-tight text-xs text-light uppercase text-right text-gray-700 {{ with .Params.Color }}hover:text-{{ . }}-600 {{ else }}hover:text-accent-600{{ end }} transition ease-in-out duration-200">{{.Params.emoji}} {{.Title}} {{with .Params.price}} - {{.}}{{end}}</h2>
+    </a>
+  </article>

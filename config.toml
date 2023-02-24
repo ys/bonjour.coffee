@@ -1,0 +1,100 @@
+languageCode = "en"
+DefaultContentLanguage = "en"
+title = "Bonjour surf"
+theme = "single"
+RemovePathAccents = true
+timeout = 200000
+enableRobotsTXT = true
+canonifyURLs = false
+#disableKinds = ["taxonomyTerm"]
+
+[build]
+  writeStats = true
+[security.exec]
+  osEnv = [ '(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$', '^ASDF_DIR$', '^HOME$']
+[params]
+  footer = "✌️ Bonjour.surf"
+  text_404 = "You lost?"
+  mainSections = [ "posts", "photos" ]
+  baseline = "Something something, surf, coffee, coastal culture"
+  showFooter = ["posts", "photos"]
+  sizes = [ "2048" , "1024" , "512" ]
+  description = "Something something, surf, coffee, coastal culture"
+  tags = []
+  hasLogo = false
+  emoji = "✌️"
+  withEmoji = true
+  arrow = "—"
+
+[params.social]
+  email = "hello@bonjour.surf"
+  domain = "bonjour.surf"
+  instagram = "bonjouryannick"
+
+[privacy]
+  [privacy.disqus]
+    disable = false
+  [privacy.googleAnalytics]
+    anonymizeIP = true
+    disable = false
+    respectDoNotTrack = true
+  [privacy.instagram]
+    disable = false
+    simple = true
+  [privacy.twitter]
+    disable = false
+    enableDNT = true
+    simple = true
+  [privacy.vimeo]
+    disable = false
+    enableDNT = true
+    simple = true
+  [privacy.youtube]
+    disable = false
+    privacyEnhanced = true
+
+[outputFormats.SearchIndex]
+  baseName = "search"
+  mediaType = "application/json"
+[outputFormats.jsonfeed]
+  mediaType = "application/json"
+  baseName = "feed"
+  isPlainText = true
+
+[outputs]
+  home = [ "html", "rss", "jsonfeed" ]
+  section = [ "html", "rss", "jsonfeed", "SearchIndex" ]
+  page = [ "html" ]
+
+[related]
+  includeNewer = true
+
+[[related.indices]]
+  name = "categories"
+  weight =  1 # We don't really need this, but omitting it would disable the indice.
+
+[author]
+  name = "Yannick Schutz"
+
+[permalinks]
+  posts = "/:slug"
+  letters = "/:slug"
+  photos = "/:slug"
+  categories = "/links/:slug"
+  microposts = "/m/:year-:month-:day-:slug"
+
+[imaging]
+  resampleFilter = "lanczos"
+  anchor = "center"
+
+
+[taxonomies]
+  category = "categories"
+
+[languages]
+  [languages.en]
+    weight = 1
+    languageName = "English"
+
+[markup.goldmark.renderer]
+unsafe= true

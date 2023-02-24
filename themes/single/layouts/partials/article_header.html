@@ -1,0 +1,12 @@
+<header class=" relative mb-8 text-left ">
+  <h1 class="text-3xl font-bold {{ with .Params.Color }}text-{{ . }}-600 {{ else }}text-accent-600{{ end }}">
+    <a alt="section link" href="{{ .Parent.RelPermalink | default ("/" | relLangURL )}}">
+    {{ .Title }}
+    </a>
+  </h1>
+  <h2 class="font-sans text-gray-600 ">
+    {{ with .Params.subtitle }}
+    {{ . }}
+    {{ end }}
+  </h2>
+</header>

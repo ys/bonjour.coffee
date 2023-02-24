@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="{{ .Site.LanguageCode }}">
+
+<head>
+  {{ with .OutputFormats.Get "jsonfeed" }}
+  <link rel="{{ .Rel }}" type="{{ .MediaType.Type }}" href="{{ .RelPermalink | safeURL }}" title="{{ $.Site.Title }}" />
+  {{ end -}}
+  {{ partial "opengraph.html" . }}
+  {{ template "_internal/twitter_cards.html" . }}
+  {{ partial "seo" . }}
+  {{ partialCached "shared_head.html" . }}
+</head>
+
+<body
+    class="font-mono text-base leading-relaxed antialiased font-normal text-darker   {{with .Params.color}}bg-{{.}}-200 selection:bg-{{.}}-300 selection:text-{{.}}-900 {{else}}selection:bg-accent-300 selection:text-accent-900 {{end}}">
+
+  <div class="mt-32 md:container md:mx-auto md:max-w-xl w-full  grid grid-cols-1 gap-16 min-h-1/2">
+    <div class="mx-4 md:mx-0 relative">
+      {{ block "main" . }}
+      {{ end }}
+    </div>
+  </div>
+  {{ block "full" . }}
+  {{ end }}
+
+  {{ partial "footer" . }}
+  {{ partial "js" . }}
+</body>
+
+</html>

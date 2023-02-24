@@ -1,0 +1,17 @@
+{{ define "main" }}
+{{ partial "article_header" . }}
+<div class="mb-10 content-{{ with .Params.color }}{{ . }}{{ else }}accent{{ end }}">
+  <div  class="post">
+    {{.Content}}
+  </div>
+  <ul class="block " >
+  {{ range $index, $page := where .Site.RegularPages.ByDate.Reverse ".Params.hide" "!=" true}}
+    <li class="flex gap-3 my-2">
+      <a href="{{$page.RelPermalink}}">{{$page.Title | default $page.File.BaseFileName }}</a> <div class=" flex-grow "><div class="mt-3 border-t border-dotted border-black" ></div></div>
+      <span>{{$page.Date.Format "2006/01/02"}}</span>
+    </li>
+  
+  {{ end }}
+  </ul>
+</div>
+{{ end }}
