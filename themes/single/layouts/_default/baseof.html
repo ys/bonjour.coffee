@@ -16,6 +16,7 @@
 
   <div class="mt-32 md:container md:mx-auto md:max-w-xl w-full  grid grid-cols-1 gap-16 min-h-1/2">
     <div class="mx-4 md:mx-0 relative">
+      {{ partial "header" . }}
       {{ block "main" . }}
       {{ end }}
     </div>

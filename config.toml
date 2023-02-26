@@ -22,7 +22,7 @@ canonifyURLs = false
   description = "Something something, surf, coffee, coastal culture"
   tags = []
   hasLogo = false
-  emoji = "✌️"
+  emoji = "✌"
   withEmoji = true
   arrow = "—"
 

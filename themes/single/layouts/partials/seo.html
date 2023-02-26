@@ -5,6 +5,7 @@
   {{ $title = printf "%s - %s" .Title $.Site.Title }}
 {{ end }}
 <title>{{ $title }}</title>
+<meta name="theme-color" content="#e2e8f0"/>
 <meta name="description" content="{{ with .Description }}{{ . }}{{ else }}{{if .IsPage}}{{ .Summary }}{{ else }}{{ with .Site.Params.description }}{{ . }}{{ end }}{{ end }}{{ end }}" />
 <meta name="keywords" content="{{ if isset .Params "tags" }}{{ if reflect.IsSlice .Params.tags}}{{ range .Params.tags }}{{ . }},{{ end }}{{else}}{{.Params.tags }}{{end}}{{ end }} ">
 <link rel="canonical" href="{{ .Permalink }}" />
