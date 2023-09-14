@@ -1,6 +1,6 @@
 languageCode = "en"
 DefaultContentLanguage = "en"
-title = "Bonjour surf"
+title = "Bonjour coffee"
 theme = "single"
 RemovePathAccents = true
 timeout = 200000
@@ -13,7 +13,7 @@ canonifyURLs = false
 [security.exec]
   osEnv = [ '(?i)^(PATH|PATHEXT|APPDATA|TMP|TEMP|TERM)$', '^ASDF_DIR$', '^HOME$']
 [params]
-  footer = "✌️ Bonjour.surf"
+  footer = "✌️ Bonjour.coffee"
   text_404 = "You lost?"
   mainSections = [ "posts", "photos" ]
   baseline = "Something something, surf, coffee, coastal culture"
@@ -22,7 +22,7 @@ canonifyURLs = false
   description = "Something something, surf, coffee, coastal culture"
   tags = []
   hasLogo = false
-  emoji = "✌"
+  emoji = "☕"
   withEmoji = true
   arrow = "—"
 

@@ -22,11 +22,9 @@
     "@downwindcss/text-decoration": "^1.1.1",
     "@fullhuman/postcss-purgecss": "^4.0.0",
     "@tailwindcss/aspect-ratio": "^0.2.0",
-    "@tailwindcss/forms": "^0.3.2",
-    "@tailwindcss/jit": "^0.1.18",
-    "@tailwindcss/line-clamp": "^0.2.0",
-    "@tailwindcss/typography": "^0.3.1",
-    "autoprefixer": "^10.2.5",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "@tailwindcss/typography": "^0.5.10",
+    "autoprefixer": "^10.4.15",
     "babel": "^6.23.0",
     "babel-core": "^6.26.3",
     "babel-plugin-syntax-object-rest-spread": "^6.13.0",
@@ -41,9 +39,9 @@
     "imagemin-jpeg-recompress": "^6.0.0",
     "imagemin-mozjpeg": "^8.0.0",
     "js-yaml": "^3.14.1",
-    "postcss": "^8.2.10",
+    "postcss": "^8.4.29",
     "postcss-cli": "^8.3.1",
     "stripe": "^8.145.0",
-    "tailwindcss": "^2.2.19"
+    "tailwindcss": "^3.3.3"
   }
 }

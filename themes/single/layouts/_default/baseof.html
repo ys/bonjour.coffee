@@ -12,19 +12,32 @@
 </head>
 
 <body
-    class="font-mono text-base leading-relaxed antialiased font-normal text-darker   {{with .Params.color}}bg-{{.}}-200 selection:bg-{{.}}-300 selection:text-{{.}}-900 {{else}}selection:bg-accent-300 selection:text-accent-900 {{end}}">
+    class="font-mono  text-base leading-relaxed antialiased font-normal text-darker  {{with .Params.color}}bg-{{.}}-200 selection:bg-{{.}}-300 selection:text-{{.}}-900 {{else}}selection:bg-accent-300 selection:text-accent-900 {{end}}">
 
-  <div class="mt-32 md:container md:mx-auto md:max-w-xl w-full  grid grid-cols-1 gap-16 min-h-1/2">
-    <div class="mx-4 md:mx-0 relative">
+  {{ $images := .Resources.ByType "image" }}
+  {{ $src := $images.GetMatch "*cover*" }}
+  {{ $src := $images.GetMatch "*feature*" }}
+  {{ $src := cond (ne $src nil) $src ($images.GetMatch "{*cover*,*thumbnail*}") }}
+  {{ $src := cond (ne $src nil) $src (index $images 0) }}
+
+    {{ $lqipw := default "30x20" }}
+    {{ $largew := default "2000x1300" }}
+
+    {{/* resize the src image to the given sizes */}}
+
+    {{ $lqip := $src.Fill $lqipw }}
+    {{ $large := $src.Fill $largew }}
+    
+<div class="w-screen h-screen  bg-center bg-cover bg-[url('{{ $large.RelPermalink }}')]">
+  <div class="flex align-items-center justify-items-center place-items-center overflow-hidden place-content-center absolute  w-screen h-screen top-0 left-0">
+    <div class="">
       {{ partial "header" . }}
       {{ block "main" . }}
       {{ end }}
     </div>
   </div>
-  {{ block "full" . }}
-  {{ end }}
+</div>
 
-  {{ partial "footer" . }}
   {{ partial "js" . }}
 </body>
 
