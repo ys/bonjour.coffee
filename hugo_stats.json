@@ -1,6 +1,7 @@
 {
   "htmlElements": {
     "tags": [
+      "a",
       "body",
       "div",
       "h1",
@@ -38,6 +39,7 @@
       "group-hover:text-amber-600",
       "h-full",
       "h-screen",
+      "home",
       "hover:cursor-grab",
       "items-center",
       "justify-center",
@@ -66,11 +68,13 @@
       "text-lg",
       "text-semibold",
       "text-sm",
+      "text-white",
       "text-xs",
       "top-0",
       "tracking-tighter",
       "transition",
-      "w-screen"
+      "w-screen",
+      "white"
     ],
     "ids": null
   }
