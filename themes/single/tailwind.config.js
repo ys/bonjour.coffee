@@ -18,6 +18,7 @@ module.exports = {
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),
     require('@downwindcss/text-decoration'),
+    require("@designbycode/tailwindcss-text-shadow"),
   ],
   theme: {
     extend: {

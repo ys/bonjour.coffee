@@ -1,9 +1,20 @@
 {{ block "header" . }}
-<header class="hover:cursor-grab py-6 md:max-w-xl text-[#F4EBBE] md:mx-auto mx-4 md:container gap-8 md:justify-between justify-center group">
+<header class="hover:cursor-grab py-6 md:max-w-xl text-[#FFB700] md:mx-auto mx-4 md:container gap-8 md:justify-between justify-center group">
   <div class="items-center flex flex-col h-full tracking-tighter text-xs ">
-    <h1 class="drop-shadow-xl text-5xl font-sans font-bold transition ease-in-out duration-500 group-hover:text-amber-600">
+    <div class="w-1/2 logo text-[#FFB700]">
+      {{ if fileExists "/static/logo.svg" }}
+            {{ readFile "/static/logo.svg" | safeHTML}}
+            <span class="hidden">Get me back to the home</span>
+          {{ else }}
+            {{.Params.emoji | default .Site.Params.emoji}}
+          {{ end }}
+    </div>
+    <h1 class="text-shadow text-shadow-[#FF8300] text-shadow-y-md text-shadow-x-md text-shadow-blur-0 text-6xl wilco-low-end transition ease-in-out duration-500 ">
       {{ .Params.friendlyTitle }}
     </h1>
+    <h2 class="text-shadow text-shadow-[#FF8300] text-shadow-y-md text-shadow-x-md text-shadow-blur-0 text-4xl wilco-treble transition ease-in-out duration-500">
+      {{ .Params.subtitle }}
+    </h2>
   </div>
 </header>
 {{ end }}

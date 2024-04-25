@@ -196,6 +196,11 @@
     "@babel/helper-validator-identifier" "^7.19.1"
     to-fast-properties "^2.0.0"
 
+"@designbycode/tailwindcss-text-shadow@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@designbycode/tailwindcss-text-shadow/-/tailwindcss-text-shadow-2.0.0.tgz#ec0359e29eacfb91cc048cdeeb1593a148338eb4"
+  integrity sha512-Dm2NZYXMjeyd0NeptuuG5SejLsTNY4YKovmUMSrqkAzn1eehqxfAvS9UsDgHTuOeT/rklXd/Rwg3axB+AyGV6g==
+
 "@downwindcss/text-decoration@^1.1.1":
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/@downwindcss/text-decoration/-/text-decoration-1.1.1.tgz#870aec1cca0d6ce40140151cffae4b31d78ff8fe"

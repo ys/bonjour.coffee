@@ -1,6 +1,7 @@
 ---
-friendlyTitle: "bonjour.☕"
-title: "Coffee, Surf, Coastal Culture - Bonjour.coffee"
+friendlyTitle: "bonjour"
+title: "Surf, Film & Coffee - Bonjour.coffee"
+subtitle: "Surf, Film & Coffee"
 ---
 
 [View Work](https://yannickschutz.com/portfolio)

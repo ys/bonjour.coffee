@@ -1,44 +1,58 @@
 @tailwind base;
 
 @font-face {
-  font-family: "ia-writer-duo";
+  font-family: "wilco-bass";
   font-display: swap;
   font-style: normal;
   font-weight: 400;
-  src: url("/iAWriterDuoS-Regular.eot") format("OpenType"),
-       url("/iAWriterDuoS-Regular.woff") format("woff"),
-       url("/iAWriterDuoS-Regular.woff2") format("woff2");
+  src: url("/fonts/WilcoLoftSans-Bass.otf") format("OpenType"),
+       url("/fonts/WilcoLoftSans-Bass.woff") format("woff"),
+       url("/fonts/WilcoLoftSans-Bass.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "ia-writer-duo";
+  font-family: "wilco-low-end";
+  font-display: swap;
   font-style: normal;
-  font-display: swap;
-  font-weight: 700;
-  src: url("/iAWriterDuoS-Bold.eot") format("OpenType"),
-       url("/iAWriterDuoS-Bold.woff") format("woff"),
-       url("/iAWriterDuoS-Bold.woff2") format("woff2");
+  font-weight: 400;
+  src: url("/fonts/WilcoLoftSans-LowEnd.otf") format("OpenType"),
+       url("/fonts/WilcoLoftSans-LowEnd.woff") format("woff"),
+       url("/fonts/WilcoLoftSans-LowEnd.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "ia-writer-duo";
+  font-family: "wilco-midrange";
   font-display: swap;
-  font-style: italic;
-  src: url("/iAWriterDuoS-Italic.eot") format("OpenType"),
-       url("/iAWriterDuoS-Italic.woff") format("woff"),
-       url("/iAWriterDuoS-Italic.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/WilcoLoftSans-Midrange.otf") format("OpenType"),
+       url("/fonts/WilcoLoftSans-Midrange.woff") format("woff"),
+       url("/fonts/WilcoLoftSans-Midrange.woff2") format("woff2");
 }
 
 @font-face {
-  font-family: "ia-writer-duo";
+  font-family: "wilco-treble";
   font-display: swap;
-  font-style: italic;
-  font-weight: 700;
-  src: url("/iAWriterDuoS-BoldItalic.eot") format("OpenType"),
-       url("/iAWriterDuoS-BoldItalic.woff") format("woff"),
-       url("/iAWriterDuoS-BoldItalic.woff2") format("woff2");
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/WilcoLoftSans-Treble.otf") format("OpenType"),
+       url("/fonts/WilcoLoftSans-Treble.woff") format("woff"),
+       url("/fonts/WilcoLoftSans-Treble.woff2") format("woff2");
 }
 
+.wilco-treble {
+  font-family: wilco-treble;
+}
+.wilco-midrange {
+  font-family: wilco-midrange;
+}
+.wilco-bass {
+  font-family: wilco-bass;
+}
+
+.wilco-low-end {
+  font-family: wilco-low-end;
+}
 
 @tailwind components;
 
@@ -175,9 +189,7 @@ hr {
   }
   @apply text-white;
   a {
-    @apply font-bold backdrop-blur-md  text-yellow-400 hover:text-white border-2 border-yellow-400 hover:bg-yellow-500 focus:outline-none focus:ring-yellow-300 font-bold rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-yellow-300 dark:text-yellow-300 dark:hover:text-white dark:hover:bg-yellow-400 dark:focus:ring-yellow-900;
-
-    
+    @apply text-[#FFB700] hover:text-shadow text-shadow-[#FF8300] text-shadow-y-md text-shadow-x-md text-shadow-blur-0 text-4xl wilco-treble transition ease-in-out duration-500 border-b-4 border-[#FFB700];
   }
 }
 

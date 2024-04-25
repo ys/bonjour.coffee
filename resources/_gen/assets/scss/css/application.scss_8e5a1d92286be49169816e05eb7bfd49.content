@@ -320,6 +320,15 @@ video {
 [hidden] {
   display: none;
 }
+/*
+!  tailwindcss-text-shadow v[object Object] | MIT License | https://designbycode.co.za
+*/
+:root{
+  --ts-text-shadow-color: rgba(0, 0,0,0.45);
+  --ts-text-shadow-x: 1px;
+  --ts-text-shadow-y: 1px;
+  --ts-text-shadow-blur: 2px;
+}
 *, ::before, ::after{
   --tw-border-spacing-x: 0;
   --tw-border-spacing-y: 0;
@@ -419,31 +428,44 @@ video {
   --tw-backdrop-sepia:  ;
 }
 @font-face {
-  font-family: "ia-writer-duo";
+  font-family: "wilco-bass";
   font-display: swap;
   font-style: normal;
   font-weight: 400;
-  src: url("/iAWriterDuoS-Regular.eot") format("OpenType"), url("/iAWriterDuoS-Regular.woff") format("woff"), url("/iAWriterDuoS-Regular.woff2") format("woff2"); }
+  src: url("/fonts/WilcoLoftSans-Bass.otf") format("OpenType"), url("/fonts/WilcoLoftSans-Bass.woff") format("woff"), url("/fonts/WilcoLoftSans-Bass.woff2") format("woff2"); }
 
 @font-face {
-  font-family: "ia-writer-duo";
+  font-family: "wilco-low-end";
+  font-display: swap;
   font-style: normal;
-  font-display: swap;
-  font-weight: 700;
-  src: url("/iAWriterDuoS-Bold.eot") format("OpenType"), url("/iAWriterDuoS-Bold.woff") format("woff"), url("/iAWriterDuoS-Bold.woff2") format("woff2"); }
+  font-weight: 400;
+  src: url("/fonts/WilcoLoftSans-LowEnd.otf") format("OpenType"), url("/fonts/WilcoLoftSans-LowEnd.woff") format("woff"), url("/fonts/WilcoLoftSans-LowEnd.woff2") format("woff2"); }
 
 @font-face {
-  font-family: "ia-writer-duo";
+  font-family: "wilco-midrange";
   font-display: swap;
-  font-style: italic;
-  src: url("/iAWriterDuoS-Italic.eot") format("OpenType"), url("/iAWriterDuoS-Italic.woff") format("woff"), url("/iAWriterDuoS-Italic.woff2") format("woff2"); }
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/WilcoLoftSans-Midrange.otf") format("OpenType"), url("/fonts/WilcoLoftSans-Midrange.woff") format("woff"), url("/fonts/WilcoLoftSans-Midrange.woff2") format("woff2"); }
 
 @font-face {
-  font-family: "ia-writer-duo";
+  font-family: "wilco-treble";
   font-display: swap;
-  font-style: italic;
-  font-weight: 700;
-  src: url("/iAWriterDuoS-BoldItalic.eot") format("OpenType"), url("/iAWriterDuoS-BoldItalic.woff") format("woff"), url("/iAWriterDuoS-BoldItalic.woff2") format("woff2"); }
+  font-style: normal;
+  font-weight: 400;
+  src: url("/fonts/WilcoLoftSans-Treble.otf") format("OpenType"), url("/fonts/WilcoLoftSans-Treble.woff") format("woff"), url("/fonts/WilcoLoftSans-Treble.woff2") format("woff2"); }
+
+.wilco-treble {
+  font-family: wilco-treble; }
+
+.wilco-midrange {
+  font-family: wilco-midrange; }
+
+.wilco-bass {
+  font-family: wilco-bass; }
+
+.wilco-low-end {
+  font-family: wilco-low-end; }
 
 .container{
   width: 100%;
@@ -980,6 +1002,10 @@ video {
 .prose :where(.prose > :last-child):not(:where([class~="not-prose"],[class~="not-prose"] *)){
   margin-bottom: 0;
 }
+
+.text-shadow{
+  text-shadow: var(--ts-text-shadow-x) var(--ts-text-shadow-y) var(--ts-text-shadow-blur) var(--ts-text-shadow-color);
+}
 .fixed{
   position: fixed;
 }
@@ -1038,6 +1064,9 @@ video {
 .h-screen{
   height: 100vh;
 }
+.w-1\/2{
+  width: 50%;
+}
 .w-full{
   width: 100%;
 }
@@ -1080,6 +1109,10 @@ video {
 .overflow-hidden{
   overflow: hidden;
 }
+.bg-\[\#38A6BF\]{
+  --tw-bg-opacity: 1;
+  background-color: rgb(56 166 191 / var(--tw-bg-opacity));
+}
 .bg-gray-200{
   --tw-bg-opacity: 1;
   background-color: rgb(226 232 240 / var(--tw-bg-opacity));
@@ -1087,12 +1120,6 @@ video {
 .bg-white{
   --tw-bg-opacity: 1;
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-.bg-\[url\(\'\'\)\]{
-  background-image: url('');
-}
-.bg-\[url\(\'\/cover_hu8da479d09823967ba601705c6f119420_1572814_2000x1300_fill_q75_h2_lanczos_center_2\.webp\'\)\]{
-  background-image: url('/cover_hu8da479d09823967ba601705c6f119420_1572814_2000x1300_fill_q75_h2_lanczos_center_2.webp');
 }
 .bg-gradient-to-l{
   background-image: linear-gradient(to left, var(--tw-gradient-stops));
@@ -1145,11 +1172,12 @@ video {
 .font-mono{
   font-family: -ui-monospace, SFMono-Regular, ui-monospace, Monaco, Andale Mono, Ubuntu Mono, monospace;
 }
-.font-sans{
-  font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
+.text-4xl{
+  font-size: 2.25rem;
+  line-height: 2.5rem;
 }
-.text-5xl{
-  font-size: 3rem;
+.text-6xl{
+  font-size: 3.75rem;
   line-height: 1;
 }
 .text-base{
@@ -1168,9 +1196,6 @@ video {
   font-size: 0.75rem;
   line-height: 1rem;
 }
-.font-bold{
-  font-weight: 700;
-}
 .font-normal{
   font-weight: 400;
 }
@@ -1180,9 +1205,9 @@ video {
 .tracking-tighter{
   letter-spacing: -0.05em;
 }
-.text-\[\#F4EBBE\]{
+.text-\[\#FFB700\]{
   --tw-text-opacity: 1;
-  color: rgb(244 235 190 / var(--tw-text-opacity));
+  color: rgb(255 183 0 / var(--tw-text-opacity));
 }
 .text-accent-700{
   --tw-text-opacity: 1;
@@ -1200,16 +1225,16 @@ video {
   --tw-text-opacity: 1;
   color: rgb(71 85 105 / var(--tw-text-opacity));
 }
+.text-white{
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
 .antialiased{
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 .drop-shadow{
   --tw-drop-shadow: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
-  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-}
-.drop-shadow-xl{
-  --tw-drop-shadow: drop-shadow(0 20px 13px rgb(0 0 0 / 0.03)) drop-shadow(0 8px 5px rgb(0 0 0 / 0.08));
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
 }
 .transition{
@@ -1227,6 +1252,18 @@ video {
 }
 .ease-in-out{
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+.text-shadow-blur-0{
+  --ts-text-shadow-blur: 0;
+}
+.text-shadow-x-md{
+  --ts-text-shadow-x: 3px;
+}
+.text-shadow-y-md{
+  --ts-text-shadow-y: 3px;
+}
+.text-shadow-\[\#FF8300\]{
+  --ts-text-shadow-color: #FF8300;
 }
 :root {
   --accent: var(--onyx);
@@ -2768,15 +2805,41 @@ hr{
   border-color: rgb(110 231 183 / var(--tw-border-opacity));
 }
 
-.home p, .home ul, .home ol{
+.home{
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgb(255 255 255 / var(--tw-text-opacity));
+}
+  .home p, .home ul, .home ol{
   margin-bottom: 1.5rem;
 }
-
-.home p:first-child{
+  .home p:first-child{
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
   font-size: 1.25rem;
   line-height: 1.75rem;
+}
+  .home a{
+  border-bottom-width: 4px;
+  --tw-border-opacity: 1;
+  border-color: rgb(255 183 0 / var(--tw-border-opacity));
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  --tw-text-opacity: 1;
+  color: rgb(255 183 0 / var(--tw-text-opacity));
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
+  transition-duration: 500ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  --ts-text-shadow-y: 3px;
+  --ts-text-shadow-x: 3px;
+  --ts-text-shadow-blur: 0;
+  --ts-text-shadow-color: #FF8300;
+  font-family: wilco-treble;
+}
+  .home a:hover{
+  text-shadow: var(--ts-text-shadow-x) var(--ts-text-shadow-y) var(--ts-text-shadow-blur) var(--ts-text-shadow-color);
 }
 
 .post{
@@ -3218,16 +3281,6 @@ hr{
 
 .hover\:underline:hover{
   text-decoration-line: underline;
-}
-
-.group:hover .group-hover\:text-amber-600{
-  --tw-text-opacity: 1;
-  color: rgb(217 119 6 / var(--tw-text-opacity));
-}
-
-.group:hover .group-hover\:text-amber-700{
-  --tw-text-opacity: 1;
-  color: rgb(180 83 9 / var(--tw-text-opacity));
 }
 
 @media (min-width: 768px){

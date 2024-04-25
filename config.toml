@@ -1,6 +1,7 @@
 languageCode = "en"
 DefaultContentLanguage = "en"
-title = "Bonjour coffee"
+title = "Bonjour"
+subtitle = "Surf, film & coffee"
 theme = "single"
 RemovePathAccents = true
 timeout = 200000
