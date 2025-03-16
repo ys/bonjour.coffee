@@ -9,8 +9,8 @@
 <meta name="application-name" content="Bonjour Yannick">
 <meta name="msapplication-TileColor" content="#008987">
 <meta name="theme-color" content="#ffffff">
-{{ $style := resources.Get "css/application.scss" | resources.ExecuteAsTemplate "main.css" . | toCSS | resources.PostCSS }}
-{{ if .Site.IsServer }}
+{{ $style := resources.Get "css/application.scss" | resources.ExecuteAsTemplate "main.css" . | toCSS | css.PostCSS }}
+{{ if hugo.IsServer }}
 {{ else }} {{ $style = $style | minify | fingerprint | resources.PostProcess }}
 {{ end }}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}" />

@@ -1,11 +1,13 @@
 {
     "version": "https://jsonfeed.org/version/1",
-    "title": "Bonjour surf",
-    "home_page_url": "",
-    "feed_url": "/",
+    "title": "Bonjour",
+    "home_page_url": "//localhost:1313/",
+    "feed_url": "//localhost:1313/",
 		
 		"description": "Something something, surf, coffee, coastal culture",
 		
+		
+		"author": { "name": "Yannick Schutz" },
 		
 			"items": [
 			

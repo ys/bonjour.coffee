@@ -1,4 +1,7 @@
-{{ $title := .File.BaseFileName }}
+{{ $title := "" }}
+{{ with .File }}
+  {{ $title = .BaseFileName }}
+{{ end}}
 {{ if .Params.seotitle }}
   {{ $title = printf "%s - %s" .Params.seotitle $.Site.Title }}
 {{ else if .Title }}
@@ -28,11 +31,11 @@
         "name": ["French","English"]
       },
       "image" : {{- $images := $.Resources.ByType "image" -}}{{- $featured := $images.GetMatch "*feature*" -}}{{- $featured := cond (ne $featured nil) $featured ($images.GetMatch "{*cover*,*thumbnail*}") -}}{{- with $featured -}}{{ $featured.Permalink }}{{ else -}}{{- with $.Site.Params.images -}}{{ index . 0 | absURL }}{{ end }}{{ end }},
-      "author" : {{ range .Site.Author }}{{ . }}{{ end }},
-      "creator" : {{ range .Site.Author }}{{ . }}{{ end }},
-      "publisher": {{ range .Site.Author }}{{ . }}{{ end }},
-      "accountablePerson" : {{ range .Site.Author }}{{ . }}{{ end }},
-      "copyrightHolder" : {{ range .Site.Author }}{{ . }}{{ end }},
+      "author" : {{ range .Site.Params.author }}{{ . }}{{ end }},
+      "creator" : {{ range .Site.Params.author }}{{ . }}{{ end }},
+      "publisher": {{ range .Site.Params.author }}{{ . }}{{ end }},
+      "accountablePerson" : {{ range .Site.Params.author }}{{ . }}{{ end }},
+      "copyrightHolder" : {{ range .Site.Params.author }}{{ . }}{{ end }},
       "copyrightYear" : {{ .Date.Format "2006" }},
       "datePublished": {{ .Date.Format "2006-01-02T15:04:05Z07:00" | safeHTML }},
       "dateModified" : {{ .Lastmod.Format "2006-01-02T15:04:05Z07:00" | safeHTML }},

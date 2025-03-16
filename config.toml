@@ -27,6 +27,9 @@ canonifyURLs = false
   withEmoji = true
   arrow = "—"
 
+[params.author]
+  name = "Yannick Schutz"
+
 [params.social]
   email = "hello@bonjour.surf"
   domain = "bonjour.surf"
@@ -73,9 +76,6 @@ canonifyURLs = false
 [[related.indices]]
   name = "categories"
   weight =  1 # We don't really need this, but omitting it would disable the indice.
-
-[author]
-  name = "Yannick Schutz"
 
 [permalinks]
   posts = "/:slug"

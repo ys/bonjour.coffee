@@ -29,13 +29,15 @@
     {{ $large := $src.Fill $largew }}
     
 <div class="w-screen h-screen  bg-center bg-cover bg-[#38A6BF] 0bg-[url('{{ $large.RelPermalink }}')]">
-  <div class="flex align-items-center justify-items-center place-items-center overflow-hidden place-content-center absolute  w-screen h-screen top-0 left-0">
+  <div class="flex align-items-center justify-items-center place-items-center overflow-hidden place-content-center   w-screen h-screen top-0 left-0">
     <div class="">
       {{ partial "header" . }}
       {{ block "main" . }}
       {{ end }}
     </div>
   </div>
+  {{ block "full" . }}
+  {{ end }}
 </div>
 
   {{ partial "js" . }}
