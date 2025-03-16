@@ -14,6 +14,7 @@ module.exports = {
 
   },
   plugins: [
+    require('@catppuccin/tailwindcss'),
     require('@tailwindcss/typography'),
     require('@tailwindcss/line-clamp'),
     require('@tailwindcss/aspect-ratio'),

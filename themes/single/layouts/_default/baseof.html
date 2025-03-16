@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+{{ $.Scratch.Set "color" "yellow" }}
+{{ with .Params.color }}
+  {{ $.Scratch.Set "color" . }}
+{{ else }}
+  {{range first 1 (shuffle $.Site.Params.themeColors) }}
+    {{ $.Scratch.Set "color" . }}
+  {{ end }}
+{{ end }}
 <html lang="{{ .Site.LanguageCode }}">
 
 <head>
@@ -12,7 +20,7 @@
 </head>
 
 <body
-    class="font-mono bg-[#38A6BF]  text-base leading-relaxed antialiased font-normal text-darker  {{with .Params.color}}bg-{{.}}-200 selection:bg-{{.}}-300 selection:text-{{.}}-900 {{else}}selection:bg-accent-300 selection:text-accent-900 {{end}}">
+    class="font-mono bg-[#38A6BF]  text-base leading-relaxed antialiased font-normal text-darker  {{with .Params.color}}b-{{.}}-200 selection:bg-{{.}}-300 selection:text-{{.}}-900 {{else}}selection:bg-accent-300 selection:text-accent-900 {{end}}">
 
   {{ $images := .Resources.ByType "image" }}
   {{ $src := $images.GetMatch "*cover*" }}
@@ -28,8 +36,8 @@
     {{ $lqip := $src.Fill $lqipw }}
     {{ $large := $src.Fill $largew }}
     
-<div class="w-screen h-screen  bg-center bg-cover bg-[#38A6BF] 0bg-[url('{{ $large.RelPermalink }}')]">
-  <div class="flex align-items-center justify-items-center place-items-center overflow-hidden place-content-center   w-screen h-screen top-0 left-0">
+<div class="w-screen bg-center bg-cover bg-[#38A6BF] 0bg-[url('{{ $large.RelPermalink }}')]">
+  <div class="flex align-items-center justify-items-center place-items-center overflow-hidden place-content-center   w-screen top-0 left-0">
     <div class="">
       {{ partial "header" . }}
       {{ block "main" . }}
@@ -39,7 +47,9 @@
   {{ block "full" . }}
   {{ end }}
 </div>
-
+<div>
+  {{ partial "footer" . }}
+</div>
   {{ partial "js" . }}
 </body>
 
