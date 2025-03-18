@@ -1,7 +1,7 @@
 {{ block "header" . }}
 <header class="hover:cursor-grab py-6 md:max-w-xl text-[#FFB700] md:mx-auto mx-4 md:container gap-8 md:justify-between justify-center group">
   <div class="items-center flex flex-col h-full tracking-tighter text-xs ">
-    <div class="w-1/2 logo text-[#FFB700]">
+    <div class="w-1/4 logo text-[#FFB700]">
       {{ if fileExists "/static/logo.svg" }}
             {{ readFile "/static/logo.svg" | safeHTML}}
             <span class="hidden">Get me back to the home</span>

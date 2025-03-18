@@ -65,7 +65,7 @@
 
 
 html {
-  font-size: 18px;
+  font-size: 16px;
   line-height: 1.725;
 }
 
@@ -180,16 +180,12 @@ hr {
 }
 
 .home {
-  @apply text-center;
   p, ul, ol {
     @apply mb-6;
   }
-  p:first-child {
-    @apply my-6 text-xl;
-  }
   @apply text-white;
   a {
-    @apply text-[#FFB700] hover:text-shadow text-shadow-[#FF8300] text-shadow-y-md text-shadow-x-md text-shadow-blur-0 text-4xl wilco-treble transition ease-in-out duration-500 border-b-4 border-[#FFB700];
+    @apply text-[#FFB700] hover:text-shadow text-shadow-[#FF8300] text-shadow-y-xs text-shadow-x-xs text-shadow-blur-0 wilco-treble transition ease-in-out duration-500 border-b-2 border-[#FFB700];
   }
 }
 
