@@ -183,9 +183,8 @@ hr {
   p, ul, ol {
     @apply mb-6;
   }
-  @apply text-white;
   a {
-    @apply text-[#FFB700] hover:text-shadow text-shadow-[#FF8300] text-shadow-y-xs text-shadow-x-xs text-shadow-blur-0 wilco-treble transition ease-in-out duration-500 border-b-2 border-[#FFB700];
+    @apply text-sunray-500 hover:text-shadow text-shadow-orange-500 text-shadow-y-xs text-shadow-x-xs text-shadow-blur-0 wilco-treble transition ease-in-out duration-500 border-b-2 border-sunray-500;
   }
 }
 

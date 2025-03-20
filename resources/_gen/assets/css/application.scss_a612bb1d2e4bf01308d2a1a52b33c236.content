@@ -571,8 +571,11 @@ video {
 .min-h-full{
   min-height: 100%;
 }
-.w-1\/4{
-  width: 25%;
+.w-16{
+  width: 4rem;
+}
+.w-24{
+  width: 6rem;
 }
 .w-8{
   width: 2rem;
@@ -631,9 +634,9 @@ video {
 .overflow-hidden{
   overflow: hidden;
 }
-.bg-\[\#38A6BF\]{
+.bg-sunray-100{
   --tw-bg-opacity: 1;
-  background-color: rgb(56 166 191 / var(--tw-bg-opacity, 1));
+  background-color: rgb(253 248 238 / var(--tw-bg-opacity, 1));
 }
 .bg-cover{
   background-size: cover;
@@ -718,9 +721,9 @@ video {
   --tw-text-opacity: 1;
   color: rgb(71 85 105 / var(--tw-text-opacity, 1));
 }
-.text-white{
+.text-sunray-500{
   --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
+  color: rgb(237 180 88 / var(--tw-text-opacity, 1));
 }
 .antialiased{
   -webkit-font-smoothing: antialiased;
@@ -748,8 +751,8 @@ video {
 .text-shadow-y-md{
   --ts-text-shadow-y: 3px;
 }
-.text-shadow-\[\#FF8300\]{
-  --ts-text-shadow-color: #FF8300;
+.text-shadow-orange-500{
+  --ts-text-shadow-color: #f97316;
 }
 :root {
   --accent: var(--onyx);
@@ -2291,19 +2294,16 @@ hr{
   border-color: rgb(110 231 183 / var(--tw-border-opacity, 1));
 }
 
-.home{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity, 1));
-}
-  .home p, .home ul, .home ol{
+.home p, .home ul, .home ol{
   margin-bottom: 1.5rem;
 }
-  .home a{
+
+.home a{
   border-bottom-width: 2px;
   --tw-border-opacity: 1;
-  border-color: rgb(255 183 0 / var(--tw-border-opacity, 1));
+  border-color: rgb(237 180 88 / var(--tw-border-opacity, 1));
   --tw-text-opacity: 1;
-  color: rgb(255 183 0 / var(--tw-text-opacity, 1));
+  color: rgb(237 180 88 / var(--tw-text-opacity, 1));
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, -webkit-backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
   transition-property: color, background-color, border-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter, -webkit-backdrop-filter;
@@ -2312,10 +2312,11 @@ hr{
   --ts-text-shadow-y: 1px;
   --ts-text-shadow-x: 1px;
   --ts-text-shadow-blur: 0;
-  --ts-text-shadow-color: #FF8300;
+  --ts-text-shadow-color: #f97316;
   font-family: wilco-treble;
 }
-  .home a:hover{
+
+.home a:hover{
   text-shadow: var(--ts-text-shadow-x) var(--ts-text-shadow-y) var(--ts-text-shadow-blur) var(--ts-text-shadow-color);
 }
 
