@@ -1,6 +1,6 @@
 ---
-friendlyTitle: "bonjour"
-title: "Surf, Film & Coffee - Bonjour.coffee"
+title: "bonjour"
+seotitle: "Surf, Film & Coffee - Bonjour.is"
 subtitle: "Surf, Film & Coffee"
 autogrid: true
 color: "yellow"
