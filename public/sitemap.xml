@@ -10,6 +10,8 @@
   </url><url>
     <loc>//localhost:1313/surfing/</loc>
   </url><url>
+    <loc>//localhost:1313/tangible/</loc>
+  </url><url>
     <loc>//localhost:1313/categories/</loc>
   </url>
 </urlset>

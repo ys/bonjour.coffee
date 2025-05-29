@@ -1055,9 +1055,6 @@ video {
 .mb-10{
   margin-bottom: 2.5rem;
 }
-.mb-8{
-  margin-bottom: 2rem;
-}
 .box-border{
   box-sizing: border-box;
 }
@@ -1176,10 +1173,6 @@ video {
 .font-sans{
   font-family: -apple-system, BlinkMacSystemFont, Helvetica Neue, Helvetica, Arial, sans-serif;
 }
-.text-3xl{
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
 .text-4xl{
   font-size: 2.25rem;
   line-height: 2.5rem;
@@ -1204,9 +1197,6 @@ video {
   font-size: 0.75rem;
   line-height: 1rem;
 }
-.font-bold{
-  font-weight: 700;
-}
 .font-normal{
   font-weight: 400;
 }
@@ -1219,10 +1209,6 @@ video {
 .text-\[\#FFB700\]{
   --tw-text-opacity: 1;
   color: rgb(255 183 0 / var(--tw-text-opacity, 1));
-}
-.text-accent-600{
-  --tw-text-opacity: 1;
-  color: rgb(5 150 105 / var(--tw-text-opacity, 1));
 }
 .text-accent-700{
   --tw-text-opacity: 1;
